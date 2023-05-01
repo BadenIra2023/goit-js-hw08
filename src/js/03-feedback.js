@@ -12,7 +12,7 @@ function handleSubmit(event) {
     event.preventDefault();
     user.email = form.elements.email.value;
     user.message = form.elements.message.value;
-    
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
     if (user.message === "" || user.email === "") {
         alert("ВАЖЛИВО!!! Усі поля повинні бути заповнені.")
     }
