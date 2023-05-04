@@ -15,12 +15,13 @@ function handleSubmit(event) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
     if (user.message === "" || user.email === "") {
         alert("ВАЖЛИВО!!! Усі поля повинні бути заповнені.")
+        AskToStorage();
     }
     else { 
         localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
         console.log(user);
+        event.currentTarget.reset();
     };
-    event.currentTarget.reset();
 }
 function AskToStorage() {
     const storage = localStorage.getItem(STORAGE_KEY);
